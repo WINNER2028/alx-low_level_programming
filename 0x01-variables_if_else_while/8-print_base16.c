@@ -6,16 +6,18 @@
  */
 int main(void)
 {
-	int num;
-	char la;
+	int i = 0;
 
-	for (num = 0; num < 10; num++)
-		putchar((num % 10) + '0');
+	while (i < 48)
+	{
+		if (i < 10)
+			putchar(i + '0');
+		else if (i > 41)
+			putchar(i - 10 + 'A');
+		i++;
+	}
 
-	for (la = 'a'; la <= 'f'; la++)
-		putchar(la);
-
-	putchar('\n');
+	putchar(10);
 
 	return (0);
-{
+}
