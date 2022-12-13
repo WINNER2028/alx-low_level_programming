@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_to_98 - Check 
+ * print_to_98 - Check
  * @n: A input integer
  * Return: Nothing
  */
