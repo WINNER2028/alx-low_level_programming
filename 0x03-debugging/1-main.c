@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - causes an infinite loop
@@ -8,7 +9,7 @@
 int main(void)
 {
 	int i;
-	
+
 	printf("infinite loop incoming :(\n");
 
 	i = 0;
@@ -19,7 +20,7 @@ int main(void)
 	 *} 
 	 */
 
-	printf("infinite loop avoided! \\o\/\n");
+	printf("infinite loop avoided! \\o/\n");
 
 	return (0);
 }
