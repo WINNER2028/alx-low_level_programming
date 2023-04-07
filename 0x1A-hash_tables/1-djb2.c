@@ -1,8 +1,8 @@
 #include "hash_tables.h"
 /**
- * AUTHOR: obi chiemerie
  * hash_djb2 - implementation of the djb2 algorithm
  * @str: string used to generate hash value
+ * author: OBI CHIEMERIE
  * Return: hash value
  */
 unsigned long int hash_djb2(const unsigned char *str)
