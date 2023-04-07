@@ -11,7 +11,7 @@ void shash_table_delete(shash_table_t *ht);
  * shash_table_create - Creates a sorted hash table.
  * @size: The size of new sorted hash table.
  *
- * Return: If an error occurs - NULL.
+ * Return: If an error occurs - 0.
  *         Otherwise - a pointer to the new sorted hash table.
  */
 shash_table_t *shash_table_create(unsigned long int size)
@@ -20,17 +20,17 @@ shash_table_t *shash_table_create(unsigned long int size)
 	unsigned long int i;
 
 	ht = malloc(sizeof(shash_table_t));
-	if (ht == NULL)
-		return (NULL);
+	if (ht == 0)
+		return (0);
 
 	ht->size = size;
 	ht->array = malloc(sizeof(shash_node_t *) * size);
-	if (ht->array == NULL)
-		return (NULL);
+	if (ht->array == 0)
+		return (0);
 	for (i = 0; i < size; i++)
-		ht->array[i] = NULL;
-	ht->shead = NULL;
-	ht->stail = NULL;
+		ht->array[i] = 0;
+	ht->shead = 0;
+	ht->stail = 0;
 
 	return (ht);
 }
