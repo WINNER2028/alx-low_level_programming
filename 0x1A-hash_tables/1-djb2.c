@@ -1,5 +1,6 @@
 #include "hash_tables.h"
 /**
+ * AUTHOR: obi chiemerie
  * hash_djb2 - implementation of the djb2 algorithm
  * @str: string used to generate hash value
  *
@@ -11,7 +12,7 @@ unsigned long int hash_djb2(const unsigned char *str)
 	int c;
 
 
-	while ((c = *str++))
+	while ((c = *str_node++))
 	{
 		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
 	}
