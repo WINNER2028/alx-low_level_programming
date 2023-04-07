@@ -10,7 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_table_t *hash;
 	char *separate = "\0";
 
-	if (ht == NULL)
+	if (ht == 0)
 		return;
 
 	hash = (hash_table_t *)ht;
