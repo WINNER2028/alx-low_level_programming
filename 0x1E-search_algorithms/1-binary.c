@@ -1,61 +1,40 @@
+
 #include "search_algos.h"
 
 /**
-* binary_search - a function that searches for a value in a sorted array of
-* integers using the Binary search algorithm
-* @array: a pointer to the first element of the array to search in
-* @size: the number of elements in array
-* @value: the value to search for
-*
-* Return: the first index where value is located, If value is not present in...
-* array or if array is NULL, your function must return -1
-*/
+  * binary_search - Searches for a value in a sorted array
+  *                 of integers using binary search.
+  * @array: A pointer to the first element of the array to search.
+  * @size: The number of elements in the array.
+  * @value: The value to search for.
+  *
+  * Return: If the value is not present or the array is NULL, -1.
+  *         Otherwise, the index where the value is located.
+  *
+  * Description: Prints the [sub]array being searched after each change.
+  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i = 0, j = size - 1;
-	size_t k;
+	size_t i, left, right;
 
 	if (array == NULL)
 		return (-1);
 
-	while (i <= j)
+	for (left = 0, right = size - 1; right >= left;)
 	{
-		print_array(i, j, array);
-		k = i + ((j - i) / 2);
-		if (array[k] == value)
-		{
-			return (k);
-		}
-		else if (array[k] < value)
-		{
-			i = k + 1;
-		}
+		printf("Searching in array: ");
+		for (i = left; i < right; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+
+		i = left + (right - left) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			right = i - 1;
 		else
-		{
-			j = k - 1;
-		}
+			left = i + 1;
 	}
+
 	return (-1);
-}
-
-/**
-* print_array - prints array in correct output for task
-* @start: beginning of array
-* @end: end of array
-* @array: the array to print
-*
-* Return: void
-*/
-void print_array(int start, int end, int *array)
-{
-	int i;
-
-	printf("Searching in array: ");
-	for (i = start; i <= end; i++)
-	{
-		printf("%d", array[i]);
-		if (i != end)
-			printf(", ");
-	}
-	printf("\n");
 }
