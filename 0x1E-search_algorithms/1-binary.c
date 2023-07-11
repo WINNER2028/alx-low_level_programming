@@ -13,7 +13,7 @@
 int binary_search(int *array, size_t size, int value)
 {
 	size_t i = 0, j = size - 1;
-	size_t t;
+	size_t k;
 
 	if (array == NULL)
 		return (-1);
@@ -21,18 +21,18 @@ int binary_search(int *array, size_t size, int value)
 	while (i <= j)
 	{
 		print_array(i, j, array);
-		t = i + ((j - i) / 2);
-		if (array[t] == value)
+		k = i + ((j - i) / 2);
+		if (array[k] == value)
 		{
-			return (t);
+			return (k);
 		}
-		else if (array[t] < value)
+		else if (array[k] < value)
 		{
-			i = t + 1;
+			i = k + 1;
 		}
 		else
 		{
-			j = t - 1;
+			j = k - 1;
 		}
 	}
 	return (-1);
@@ -48,13 +48,13 @@ int binary_search(int *array, size_t size, int value)
 */
 void print_array(int start, int end, int *array)
 {
-	int b;
+	int i;
 
 	printf("Searching in array: ");
-	for (b = start; b <= end; b++)
+	for (i = start; i <= end; i++)
 	{
-		printf("%d", array[b]);
-		if (b != end)
+		printf("%d", array[i]);
+		if (i != end)
 			printf(", ");
 	}
 	printf("\n");
