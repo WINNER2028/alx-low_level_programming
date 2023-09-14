@@ -8,6 +8,7 @@ Tasks 📃
             If the program is renamed, the program will print the new name without having to be compiled again.
             The path should not be removed before the name of the program.
 
+
     1. Silence is argument carried out by other means
         1-args.c: C program that prints the number of arguments passed to it, followed by a new line.
 
